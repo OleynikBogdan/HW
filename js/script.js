@@ -1,2 +1,3 @@
 "use strict";
-console.log(1 + 2 + 3);
+const name = prompt("what is your name?")
+alert(`Hello ${name}! How are you`);
