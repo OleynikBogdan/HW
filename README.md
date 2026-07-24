@@ -1,6 +1,3 @@
-## Homework 5
+## Homework 6
 
-- Number
-- BigInt
-- String
-- Mini task
+- Character.js
