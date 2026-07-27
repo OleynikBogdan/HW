@@ -1,59 +1,141 @@
 "use strict";
 
-// ===== Task 2 =====
+//==========================
+// Task 2
+//==========================
 
-console.log(typeof 42);
-console.log(typeof 42n);
-console.log(typeof "hello");
-console.log(typeof true);
-console.log(typeof undefined);
-console.log(typeof null);
-console.log(typeof NaN);
-console.log(typeof Infinity);
-console.log(typeof Symbol("id"));
-console.log(typeof {});
-console.log(typeof []);
-console.log(typeof [1, 2, 3]);
-console.log(typeof function () {});
-console.log(typeof (() => {}));
-console.log(typeof (2 + 2));
-console.log(typeof ("2" + 2));
-console.log(typeof ("foo" - "bar"));
+// Scene 1
+let name1;
+console.log(name1);
 
-let x;
-console.log(typeof x);
+// Scene 2
+let name2 = null;
+console.log(name2);
 
-console.log(typeof nonExistentVariable);
+// Scene 3
+function greet(user) {
+  console.log("Hello,", user);
+}
+greet();
 
-console.log(typeof typeof 42);
+// Scene 4
+function calculate1(a, b) {
+  return a + b;
+}
+console.log(calculate1(2, 3));
 
-// ===== Task 4 =====
+// Scene 5
+function calculate2(a, b) {
+  let result = a + b;
+}
+console.log(calculate2(2, 3));
 
-function isReallyArray(value) {
-  return Array.isArray(value);
+// Scene 6
+function calculate3(a, b) {
+  return;
+}
+console.log(calculate3(2, 3));
+
+// Scene 7
+const user1 = {
+  firstName: "John",
+  lastName: "Doe",
+};
+
+console.log(user1.age);
+
+// Scene 8
+const user2 = {
+  firstName: "John",
+  middleName: null,
+  lastName: "Doe",
+};
+
+console.log(user2.middleName);
+
+// Scene 9
+const arr = [10, 20, 30];
+
+console.log(arr[10]);
+
+// Scene 10
+const user3 = {
+  name: "Anna",
+  address: {
+    city: "Kyiv",
+  },
+};
+
+console.log(user3.address.street);
+
+//==========================
+// Task 3
+//==========================
+
+function describeEmpty(value) {
+  if (value === undefined) {
+    return "Це undefined — JavaScript сам поставив або значення не задано";
+  }
+
+  if (value === null) {
+    return "Це null — розробник свідомо сказав, що тут порожньо";
+  }
+
+  return `Це не є порожнім значенням: ${typeof value}, ${value}`;
 }
 
-console.log(isReallyArray([1, 2, 3]));
-console.log(isReallyArray("hello"));
-console.log(isReallyArray({ length: 3 }));
-console.log(isReallyArray(null));
-console.log(isReallyArray("123".split("")));
+console.log(describeEmpty(null));
+console.log(describeEmpty(undefined));
+console.log(describeEmpty(0));
+console.log(describeEmpty(""));
+console.log(describeEmpty([]));
+console.log(describeEmpty(false));
 
-// ===== Task 5 =====
+//==========================
+// Task 4
+//==========================
 
-function whatIsIt(value) {
-  if (value === null) return "null";
+// Було:
+// let userName;
+// let userAge;
 
-  if (Array.isArray(value)) return "array";
+// Стало
 
-  return typeof value;
+const userName = "Anna";
+const userAge = 20;
+
+console.log("name:", userName);
+
+function getGreeting(name) {
+  return `Hello, ${name}`;
 }
 
-console.log(whatIsIt(42));
-console.log(whatIsIt("hi"));
-console.log(whatIsIt(null));
-console.log(whatIsIt([1, 2]));
-console.log(whatIsIt({}));
-console.log(whatIsIt(() => {}));
-console.log(whatIsIt(undefined));
-console.log(whatIsIt(NaN));
+const message = getGreeting("World");
+
+console.log(message);
+
+/*
+коментарі до 4 завдання
+Замінив let на const,
+одразу присвоїв значення змінним
+та додав return у функцію getGreeting(),
+щоб вона не повертала undefined.
+*/
+
+//==========================
+// Task 5
+//==========================
+
+const userA = {
+  name: "Anna",
+  contact: {
+    email: "anna@example.com",
+  },
+};
+
+const userB = {
+  name: "Bob",
+};
+
+console.log(userA.contact?.email);
+console.log(userB.contact?.email);
