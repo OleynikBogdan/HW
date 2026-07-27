@@ -1,3 +1,3 @@
-## Homework 6
+## Homework 7
 
 - Character.js
