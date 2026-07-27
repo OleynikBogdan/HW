@@ -1,4 +1,3 @@
-## Homework 8
+## Homework 9
 
-- investigation.js
-- answers.md
+- club.js
