@@ -1,3 +1,4 @@
 ## Homework 7
 
-- Character.js
+- investigation.js
+- answers.md
