@@ -1,9 +1,11 @@
 "use strict";
 console.log("======= Task 1 =======");
+let result = "";
 
 for (let i = 20; i <= 30; i += 0.5) {
-  console.log(i);
+  result += `${i} `;
 }
+console.log(result.trim());
 
 console.log("======= Task 2 =======");
 
