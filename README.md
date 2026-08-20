@@ -1,5 +1,3 @@
-## Homework 15
+## Homework 18
 
-- task1.js
-- task2.js
-- Answers.md
+- script.js
