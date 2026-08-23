@@ -1,9 +1,11 @@
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(array);
+const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-let removeElement = (arr, item) => {
-  let index = arr.indexOf(item);
-  return arr.splice(index, 1);
+const generateKey = (val, charSet) => {
+  let key = "";
+  for (let i = 0; i < val; i++) {
+    key += charSet.charAt(Math.floor(Math.random() * charSet.length));
+  }
+  return key;
 };
-removeElement(array, 3);
-console.log(array);
+
+console.log(generateKey(16, characters)); // Example output: "52m35q5b87pi7wq3
