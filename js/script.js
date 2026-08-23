@@ -1,11 +1,12 @@
 const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
 const generateKey = (val, charSet) => {
-  let key = "";
+  let res = "";
   for (let i = 0; i < val; i++) {
-    key += charSet.charAt(Math.floor(Math.random() * charSet.length));
+    res += charSet.charAt(Math.floor(Math.random() * charSet.length));
   }
-  return key;
+  return res;
 };
 
-console.log(generateKey(16, characters)); // Example output: "52m35q5b87pi7wq3
+const key = generateKey(16, characters);
+console.log(key); // Example output: "u5lrt0504ysb58el"
