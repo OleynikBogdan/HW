@@ -1,3 +1,3 @@
-## Homework 20
+## Homework 19
 
-- script.js
+- cript.js
