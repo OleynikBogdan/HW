@@ -1,17 +1,14 @@
 "use strict";
 
-const listItems = document.querySelectorAll("li");
+const input = document.querySelector("#input");
+const message = document.querySelector("#message");
 
-for (const item of listItems) {
-  console.log(item);
-}
+message.style.display = "none";
 
-console.log(`total elements: ${listItems.length}`);
+input.addEventListener("focus", () => {
+  message.style.display = "block";
+});
 
-const textArray = [];
-
-for (const item of listItems) {
-  textArray.push(item.textContent.trim());
-}
-
-console.log(textArray);
+input.addEventListener("blur", () => {
+  message.style.display = "none";
+});
