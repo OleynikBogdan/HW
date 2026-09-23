@@ -1,51 +1,17 @@
 "use strict";
 
-const user = {
-  name: "Bogdan",
-};
+const listItems = document.querySelectorAll("li");
 
-function greet(age, city) {
-  return `${this.name}, ${age}, ${city}`;
+for (const item of listItems) {
+  console.log(item);
 }
 
-Function.prototype.myCall = function (context, ...args) {
-  context.fn = this;
+console.log(`total elements: ${listItems.length}`);
 
-  const result = context.fn(...args);
+const textArray = [];
 
-  delete context.fn;
+for (const item of listItems) {
+  textArray.push(item.textContent.trim());
+}
 
-  return result;
-};
-
-console.log(greet.myCall(user, 23, "Kyiv"));
-
-Function.prototype.myApply = function (context, args) {
-  context.fn = this;
-
-  const result = context.fn(...args);
-
-  delete context.fn;
-
-  return result;
-};
-
-console.log(greet.myApply(user, [23, "Kyiv"]));
-
-Function.prototype.myBind = function (context, ...args) {
-  const originalFunction = this;
-
-  return function (...newArgs) {
-    context.fn = originalFunction;
-
-    const result = context.fn(...args, ...newArgs);
-
-    delete context.fn;
-
-    return result;
-  };
-};
-
-const boundGreet = greet.myBind(user, 23);
-
-console.log(boundGreet("Kyiv"));
+console.log(textArray);
