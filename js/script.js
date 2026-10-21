@@ -1,25 +1,40 @@
 "use strict";
 
-const cards = document.querySelector("#cards");
+const input = document.querySelector("#item-input");
+const addBtn = document.querySelector("#add-btn");
+const list = document.querySelector(".list");
 
-cards.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-read-more-btn]");
+addBtn.addEventListener("click", () => {
+  const text = input.value.trim();
 
-  if (!button || !cards.contains(button)) {
+  if (text === "") {
     return;
   }
 
-  const currentCard = button.closest(".card");
+  const li = document.createElement("li");
+  li.textContent = text;
 
-  if (!currentCard) {
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "✖";
+
+  li.append(deleteBtn);
+  list.append(li);
+
+  input.value = "";
+});
+
+list.addEventListener("click", (event) => {
+  const deleteBtn = event.target.closest("button");
+
+  if (deleteBtn) {
+    const li = deleteBtn.closest("li");
+    li.remove();
     return;
   }
 
-  const isExpanded = currentCard.classList.toggle("expanded");
+  const li = event.target.closest("li");
 
-  if (isExpanded) {
-    button.textContent = button.dataset.hideText;
-  } else {
-    button.textContent = button.dataset.readMoreBtn;
+  if (li && list.contains(li)) {
+    li.classList.toggle("selected");
   }
 });
